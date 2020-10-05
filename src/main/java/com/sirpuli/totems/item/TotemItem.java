@@ -30,9 +30,9 @@ public class TotemItem {
 
     public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, TotemsOfPower.MOD_ID);
 
-    public static final RegistryObject<Item> TOTEM_OF_SPEED = ITEMS.register("totem_of_speed", () -> new Totem(TotemStats.SPEED_TIER_0, CREATIVE_TAB, 0));
-    public static final RegistryObject<Item> TOTEM_OF_FIRE_RESISTANCE = ITEMS.register("totem_of_fire_resistance", () -> new Item(CREATIVE_TAB));
-    public static final RegistryObject<Item> TOTEM_OF_JUMPING = ITEMS.register("totem_of_jumping", () -> new Item(CREATIVE_TAB));
+    public static final RegistryObject<Item> TOTEM_OF_SPEED = ITEMS.register("totem_of_speed_tier_0", () -> new Totem(TotemStats.SPEED_TIER_0, CREATIVE_TAB));
+    public static final RegistryObject<Item> TOTEM_OF_FIRE_RESISTANCE = ITEMS.register("totem_of_fire_resistance", () -> new Totem(TotemStats.FIRE,  CREATIVE_TAB));
+    public static final RegistryObject<Item> TOTEM_OF_JUMPING = ITEMS.register("totem_of_jumping_tier_0", () -> new Totem(TotemStats.JUMP_TIER_0, CREATIVE_TAB));
     public static final RegistryObject<Item> TOTEM_OF_LUCK = ITEMS.register("totem_of_luck", () -> new Item(CREATIVE_TAB));
 
 

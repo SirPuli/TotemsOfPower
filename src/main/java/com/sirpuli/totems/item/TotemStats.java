@@ -24,6 +24,9 @@ public enum TotemStats implements IItemTier {
     ),
     JUMP_TIER_1(
             200
+    ),
+    LUCK(
+            200
     );
 
     private final int durability;

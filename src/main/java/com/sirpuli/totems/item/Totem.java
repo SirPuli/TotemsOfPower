@@ -5,10 +5,8 @@ import net.minecraft.item.TieredItem;
 
 public class Totem extends TieredItem {
 
-    int tier;
 
-    public Totem(IItemTier statsIn, Properties builder, int tierIn) {
+    public Totem(IItemTier statsIn, Properties builder) {
         super(statsIn, builder);
-        this.tier = tierIn;
     }
 }
