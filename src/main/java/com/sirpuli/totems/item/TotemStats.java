@@ -2,40 +2,40 @@ package com.sirpuli.totems.item;
 
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.potion.Effect;
-import net.minecraft.potion.Effects;
 
 public enum TotemStats implements IItemTier {
-
-    SPEED(
-            Effects.SPEED,
-            new int[] {0,1,1,2},
-            new int[] {100, 100, 150, 200 }
+    SPEED_TIER_0(
+            200
+    ),
+    SPEED_TIER_1(
+            200
+    ),
+    SPEED_TIER_2(
+            200
+    ),
+    SPEED_TIER_3(
+            200
+    ),
+    FIRE(
+            200
+    ),
+    JUMP_TIER_0(
+            200
+    ),
+    JUMP_TIER_1(
+            200
     );
 
-    private final Effect effect;
-    private final int[] amplifiers;
-    private final int[] durability;
+    private final int durability;
 
-
-
-    TotemStats(Effect effectIn, int[] amplifiersIn, int[] durabilityIn) {
-        this.effect = effectIn;
-        this.amplifiers = amplifiersIn;
-        this.durability = durabilityIn;
+    TotemStats(int durability) {
+        this.durability = durability;
     }
 
-    public Effect getEffect() {
-        return effect;
-    }
-
-    public int getAmplifiers(int tier) {
-        return amplifiers[tier];
-    }
 
     @Override
     public int getMaxUses() {
-        return 150;
+        return durability;
     }
 
     @Override

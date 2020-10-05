@@ -1,13 +1,11 @@
 package com.sirpuli.totems.enchantments;
 
 import com.sirpuli.totems.TotemsOfPower;
-import com.sirpuli.totems.item.Totem;
 import com.sirpuli.totems.item.TotemItem;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
@@ -51,9 +49,8 @@ public class SpeedEnchantment extends Enchantment {
         @SubscribeEvent
         public static void applyEffect(TickEvent.PlayerTickEvent event){
             PlayerEntity playerEntity = event.player;
-            if (event.player.getHeldItemOffhand().getItem() instanceof Totem){
-                Item heldItem = playerEntity.getHeldItemOffhand().getItem();
-                playerEntity.addPotionEffect((new EffectInstance(Effects.SPEED, 21, 1, false, false)));
+            if (event.player.getHeldItemOffhand().getItem() == TotemItem.SPEED_TOTEM.get()){
+                playerEntity.addPotionEffect((new EffectInstance(Effects.SPEED, 21, 0, false, false)));
                 tick++;
                 if (tick >= 1000 && rand.nextInt(300) == 69){
                     playerEntity.getHeldItemOffhand().damageItem(1, playerEntity, (onBreak) -> {
