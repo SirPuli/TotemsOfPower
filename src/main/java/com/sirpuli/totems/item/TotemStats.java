@@ -2,6 +2,7 @@ package com.sirpuli.totems.item;
 
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.potion.Effect;
 
 public enum TotemStats implements IItemTier {
     SPEED_TIER_0(
@@ -17,7 +18,7 @@ public enum TotemStats implements IItemTier {
             200
     ),
     FIRE(
-            200
+            500
     ),
     JUMP_TIER_0(
             200
