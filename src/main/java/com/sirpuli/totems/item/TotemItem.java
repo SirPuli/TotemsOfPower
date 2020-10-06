@@ -1,13 +1,9 @@
 package com.sirpuli.totems.item;
 
 import com.sirpuli.totems.TotemsOfPower;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.util.Hand;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.RegistryObject;
@@ -22,7 +18,7 @@ public class TotemItem {
 
         @OnlyIn(Dist.CLIENT)
         public ItemStack createIcon() {
-            return new ItemStack(TotemItem.TOTEM_OF_SPEED.get());
+            return new ItemStack(TotemItem.TOTEM_OF_SPEED_TIER_0.get());
         }
     };
 
@@ -36,9 +32,16 @@ public class TotemItem {
     2: JUMP BOOST
     3: LUCK
      */
-    public static final RegistryObject<Item> TOTEM_OF_SPEED = ITEMS.register("totem_of_speed_tier_0", () -> new Totem(TotemStats.SPEED_TIER_0, CREATIVE_TAB, 0));
+    public static final RegistryObject<Item> TOTEM_OF_SPEED_TIER_0 = ITEMS.register("totem_of_speed_tier_0", () -> new Totem(TotemStats.SPEED_TIER_0, CREATIVE_TAB, 0));
+    public static final RegistryObject<Item> TOTEM_OF_SPEED_TIER_1 = ITEMS.register("totem_of_speed_tier_1", () -> new Totem(TotemStats.SPEED_TIER_1, CREATIVE_TAB, 0));
+    public static final RegistryObject<Item> TOTEM_OF_SPEED_TIER_2 = ITEMS.register("totem_of_speed_tier_2", () -> new Totem(TotemStats.SPEED_TIER_2, CREATIVE_TAB, 0));
+    public static final RegistryObject<Item> TOTEM_OF_SPEED_TIER_3 = ITEMS.register("totem_of_speed_tier_3", () -> new Totem(TotemStats.SPEED_TIER_3, CREATIVE_TAB, 0));
+
     public static final RegistryObject<Item> TOTEM_OF_FIRE_RESISTANCE = ITEMS.register("totem_of_fire_resistance", () -> new Totem(TotemStats.FIRE,  CREATIVE_TAB, 1));
-    public static final RegistryObject<Item> TOTEM_OF_JUMPING = ITEMS.register("totem_of_jumping_tier_0", () -> new Totem(TotemStats.JUMP_TIER_0, CREATIVE_TAB, 2));
+
+    public static final RegistryObject<Item> TOTEM_OF_JUMPING_TIER_0 = ITEMS.register("totem_of_jumping_tier_0", () -> new Totem(TotemStats.JUMP_TIER_0, CREATIVE_TAB, 2));
+    public static final RegistryObject<Item> TOTEM_OF_JUMPING_TIER_1 = ITEMS.register("totem_of_jumping_tier_1", () -> new Totem(TotemStats.JUMP_TIER_1, CREATIVE_TAB, 2));
+
     public static final RegistryObject<Item> TOTEM_OF_LUCK = ITEMS.register("totem_of_luck", () -> new Totem(TotemStats.LUCK, CREATIVE_TAB, 3));
 
 

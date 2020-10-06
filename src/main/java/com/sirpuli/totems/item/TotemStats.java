@@ -6,28 +6,28 @@ import net.minecraft.potion.Effect;
 
 public enum TotemStats implements IItemTier {
     SPEED_TIER_0(
-            200
+            60
     ),
     SPEED_TIER_1(
-            200
+            120
     ),
     SPEED_TIER_2(
-            200
+            120
     ),
     SPEED_TIER_3(
-            200
+            180
     ),
     FIRE(
-            500
+            300
     ),
     JUMP_TIER_0(
-            200
+            60
     ),
     JUMP_TIER_1(
-            200
+            60
     ),
     LUCK(
-            200
+            60
     );
 
     private final int durability;

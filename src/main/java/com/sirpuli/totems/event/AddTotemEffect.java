@@ -12,56 +12,91 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 import javax.swing.*;
+import java.util.Objects;
 import java.util.Random;
 
 
 @Mod.EventBusSubscriber(modid = TotemsOfPower.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
-public class AddEffect {
+public class AddTotemEffect {
     static int tick = 0;
     static Random rand = new Random();
-    static String totemInHand = null;
+    static String totemInHand = "alma";
+    static int amplifier = 0;
 
     @SubscribeEvent
     public static void applyEffect(TickEvent.PlayerTickEvent event) {
         PlayerEntity playerEntity = event.player;
         if (isTotemInOffHand(playerEntity)) {
-            switch (totemInHand) {
-                case "totem_of_speed_tier_0":
-                    addEffectToPlayer(playerEntity, Effects.SPEED, 0);
+            switch (totemEffect(playerEntity.getHeldItemOffhand().getItem().toString())) {
+                case "speed":
+                    addEffectToPlayer(playerEntity, Effects.SPEED, amplifier);
                     tick++;
                     if (tick >= 1000 && rand.nextInt(300) == 69) {
                         damageTotem(playerEntity, 1);
                         tick = 0;
                     }
                     break;
-                case "totem_of_fire_resistance":
-                    addEffectToPlayer(playerEntity, Effects.FIRE_RESISTANCE, 0);
-                    tick++;
-                    if (playerEntity.isBurning() && tick > 20) {
-                        damageTotem(playerEntity, 1);
-                        tick = 0;
+                case "fire_resistance":
+                    if (playerEntity.isBurning()) {
+                        addEffectToPlayer(playerEntity, Effects.FIRE_RESISTANCE, amplifier);
+                        tick++;
+                        if (tick > 20) {
+                            damageTotem(playerEntity, 1);
+                            tick = 0;
+                        }
                     }
                     break;
-                case "totem_of_jumping":
-                    addEffectToPlayer(playerEntity, Effects.JUMP_BOOST, 0);
+                case "jump":
+                    addEffectToPlayer(playerEntity, Effects.JUMP_BOOST, amplifier);
                     tick++;
                     if (tick >= 1000 && rand.nextInt(300) == 69) {
                         damageTotem(playerEntity, 1);
                         tick = 0;
                     }
                     break;
+                case "luck":
+                    addEffectToPlayer(playerEntity, Effects.LUCK, amplifier);
+                    if (tick >= 1000 && rand.nextInt(300) == 69) {
+                        damageTotem(playerEntity, 1);
+                        tick = 0;
+                    }
             }
         }
     }
 
     public static boolean isTotemInOffHand(PlayerEntity playerEntity) {
+        return playerEntity.getHeldItemOffhand().getItem() instanceof Totem;
+    }
 
-        if (playerEntity.getHeldItemOffhand().getItem() instanceof Totem) {
-            totemInHand = playerEntity.getHeldItemOffhand().getItem().toString();
-            return true;
+    public static String totemEffect(String itemName) {
+        switch (itemName) {
+            case "totem_of_speed_tier_0":
+                amplifier = 0;
+                return "speed";
+            case "totem_of_speed_tier_1":
+                amplifier = 1;
+                return "speed";
+            case "totem_of_speed_tier_2":
+                amplifier = 2;
+                return "speed";
+            case "totem_of_speed_tier_3":
+                amplifier = 3;
+                return "speed";
+            case "totem_of_fire_resistance":
+                amplifier = 0;
+                return "fire_resistance";
+            case "totem_of_jumping_tier_0":
+                amplifier = 0;
+                return "jump";
+            case "totem_of_jumping_tier_1":
+                amplifier = 1;
+                return "jump";
+            case "totem_of_luck":
+                amplifier = 0;
+                return "luck";
+            default:
+                return "alma";
         }
-        totemInHand = null;
-        return false;
     }
 
     public static void addEffectToPlayer(PlayerEntity playerEntity, Effect effect, int amplifier) {
