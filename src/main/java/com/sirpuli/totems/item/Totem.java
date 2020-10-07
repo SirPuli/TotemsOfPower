@@ -14,23 +14,37 @@ import java.util.List;
 
 public class Totem extends TieredItem {
 
-    protected IItemTier stats;
+    /*Effect IDs        | Colors        | amplifiers
+    0: SPEED BOOST      | YELLOW        | 0, 1, 2
+    1: FIRE RESISTANCE  | RED           | 0
+    2: JUMP BOOST       | BLUE          | 0, 1
+    3: LUCK             | GREEN         | 0
+    4: HASTE            | GOLD          | 0, 1
+    5: STRENGTH         | DARK RED      | 0, 0, 1
+    6: REGENERATION     | DARK GREEN    | Custom
+    7: RESISTANCE       | BLACK         | 0, 0, 1, 1, 2, 3
+    8: NIGHT VISION     | WHITE         | 0
+    9: WATER BREATHING  | DARK BLUE     | 0
+    MAYBE:
+        INVISIBILITY
+        HEALTH BOOST
+        ABSORPTION
+        SATURATION
+  */
+    protected TotemStats stats;
     int effectID;
+    String[] effects = {"speed boost", "fire resistance", "jump boost", "luck", "haste", "strength", "regeneration", "resistance", "night vision", "water breathing"};
+    String[] colors = {
+            MCFormat.BOLD + MCFormat.YELLOW, MCFormat.BOLD + MCFormat.RED,
+            MCFormat.BOLD + MCFormat.BLUE, MCFormat.BOLD + MCFormat.GREEN,
+            MCFormat.BOLD + MCFormat.GOLD, MCFormat.BOLD + MCFormat.DARK_RED,
+            MCFormat.BOLD + MCFormat.DARK_GREEN, MCFormat.BOLD + MCFormat.BLACK,
+            MCFormat.BOLD + MCFormat.WHITE, MCFormat.BOLD + MCFormat.DARK_BLUE};
 
-    /*Effect IDs        | Colors
-    0: SPEED BOOST      | YELLOW
-    1: FIRE RESISTANCE  | RED
-    2: JUMP BOOST       | BLUE
-    3: LUCK             | GREEN
-     */
-
-    String[] effects = {"speed boost", "fire resistance", "jump boost", "luck"};
-    String[] colors = {MCFormat.BOLD + MCFormat.YELLOW, MCFormat.BOLD + MCFormat.RED, MCFormat.BOLD + MCFormat.BLUE, MCFormat.BOLD + MCFormat.GREEN};
-
-    public Totem(IItemTier statsIn, Properties builder, int effectID) {
+    public Totem(TotemStats statsIn, Properties builder) {
         super(statsIn, builder);
         this.stats = statsIn;
-        this.effectID = effectID;
+        this.effectID = stats.getID();
     }
 
     @Override
