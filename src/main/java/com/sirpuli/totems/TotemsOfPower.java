@@ -22,7 +22,6 @@
 package com.sirpuli.totems;
 
 import com.sirpuli.totems.item.ModItem;
-import com.sirpuli.totems.item.TotemStats;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;

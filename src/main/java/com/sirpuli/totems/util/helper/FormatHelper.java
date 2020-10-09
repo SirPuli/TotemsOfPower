@@ -1,3 +1,7 @@
+/*******************************************************************************
+  Copyright 2020 Gergő Pauli
+ ******************************************************************************/
+
 package com.sirpuli.totems.util.helper;
 
 import net.minecraft.enchantment.Enchantment;

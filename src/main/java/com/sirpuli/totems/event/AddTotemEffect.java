@@ -1,3 +1,7 @@
+/*******************************************************************************
+  Copyright 2020 Gergő Pauli
+ ******************************************************************************/
+
 package com.sirpuli.totems.event;
 
 import com.sirpuli.totems.TotemsOfPower;
@@ -177,7 +181,6 @@ public class AddTotemEffect {
     public static void damageTotem(PlayerEntity playerEntity, int amount) {
         playerEntity.getHeldItemOffhand().damageItem(amount, playerEntity, (onBreak) -> {
             onBreak.sendBreakAnimation(Hand.OFF_HAND);
-            TotemsOfPower.LOGGER.info("Totem eltört");
         });
     }
 

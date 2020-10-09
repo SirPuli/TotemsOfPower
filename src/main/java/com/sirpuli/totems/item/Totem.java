@@ -1,3 +1,7 @@
+/*******************************************************************************
+  Copyright 2020 Gergő Pauli
+ ******************************************************************************/
+
 package com.sirpuli.totems.item;
 
 import com.sirpuli.totems.util.helper.KeyboardHelper;
@@ -21,7 +25,7 @@ public class Totem extends TieredItem {
     3: LUCK             | GREEN         | 0
     4: HASTE            | GOLD          | 0, 1
     5: STRENGTH         | DARK RED      | 0, 0, 1
-    6: REGENERATION     | DARK GREEN    | Custom
+    6: REGENERATION     | DARK GREEN    | 1, 1, 2, 2 *Does not apply the Regeneration effect, insted directly heals the player when injured*
     7: RESISTANCE       | BLACK         | 0, 0, 1, 1, 2, 3
     8: NIGHT VISION     | WHITE         | 0
     9: WATER BREATHING  | DARK BLUE     | 0
@@ -31,7 +35,7 @@ public class Totem extends TieredItem {
         ABSORPTION
         SATURATION
   */
-    protected TotemStats stats;
+    protected IItemTier stats;
     int effectID;
     String[] effects = {"speed boost", "fire resistance", "jump boost", "luck", "haste", "strength", "regeneration", "resistance", "night vision", "water breathing"};
     String[] colors = {
@@ -41,10 +45,10 @@ public class Totem extends TieredItem {
             MCFormat.BOLD + MCFormat.DARK_GREEN, MCFormat.BOLD + MCFormat.BLACK,
             MCFormat.BOLD + MCFormat.WHITE, MCFormat.BOLD + MCFormat.DARK_BLUE};
 
-    public Totem(TotemStats statsIn, Properties builder) {
+    public Totem(IItemTier statsIn, Properties builder, int id) {
         super(statsIn, builder);
         this.stats = statsIn;
-        this.effectID = stats.getID();
+        this.effectID = id;
     }
 
     @Override
