@@ -18,7 +18,23 @@ import net.minecraftforge.fml.common.Mod;
 import javax.swing.*;
 import java.util.Objects;
 import java.util.Random;
-
+   /*Effect IDs        | Colors        | amplifiers
+    0: SPEED BOOST      | YELLOW        | 0, 1, 2
+    1: FIRE RESISTANCE  | RED           | 0
+    2: JUMP BOOST       | BLUE          | 0, 1
+    3: LUCK             | GREEN         | 0
+    4: HASTE            | GOLD          | 0, 1
+    5: STRENGTH         | DARK RED      | 0, 0, 1
+    6: REGENERATION     | DARK GREEN    | Custom
+    7: RESISTANCE       | BLACK         | 0, 0, 1, 1, 2, 3
+    8: NIGHT VISION     | WHITE         | 0
+    9: WATER BREATHING  | DARK BLUE     | 0
+    MAYBE:
+        INVISIBILITY
+        HEALTH BOOST
+        ABSORPTION
+        SATURATION
+     */
 
 @Mod.EventBusSubscriber(modid = TotemsOfPower.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class AddTotemEffect {
@@ -89,23 +105,6 @@ public class AddTotemEffect {
     public static boolean isTotemInOffHand(PlayerEntity playerEntity) {
         return playerEntity.getHeldItemOffhand().getItem() instanceof Totem;
     }
-    /*Effect IDs        | Colors        | amplifiers
-    0: SPEED BOOST      | YELLOW        | 0, 1, 2
-    1: FIRE RESISTANCE  | RED           | 0
-    2: JUMP BOOST       | BLUE          | 0, 1
-    3: LUCK             | GREEN         | 0
-    4: HASTE            | GOLD          | 0, 1
-    5: STRENGTH         | DARK RED      | 0, 0, 1
-    6: REGENERATION     | DARK GREEN    | Custom
-    7: RESISTANCE       | BLACK         | 0, 0, 1, 1, 2, 3
-    8: NIGHT VISION     | WHITE         | 0
-    9: WATER BREATHING  | DARK BLUE     | 0
-    MAYBE:
-        INVISIBILITY
-        HEALTH BOOST
-        ABSORPTION
-        SATURATION
-     */
 
     public static String totemEffect(String itemName) {
         switch (itemName) {

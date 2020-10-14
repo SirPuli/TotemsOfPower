@@ -4,11 +4,25 @@
   "item.totems.totem_of_speed_tier_0": "Totem of Speed I",
   "item.totems.totem_of_speed_tier_1": "Totem of Speed II",
   "item.totems.totem_of_speed_tier_2": "Totem of Speed III",
-  "item.totems.totem_of_speed_tier_3": "Totem of Speed IV",
   "item.totems.totem_of_fire_resistance": "Totem of Fire Resistance",
   "item.totems.totem_of_jumping_tier_0": "Totem of Jumping I",
   "item.totems.totem_of_jumping_tier_1": "Totem of Jumping II",
-  "item.totems.totem_of_luck": "Totem of Luck"
-
-
+  "item.totems.totem_of_luck": "Totem of Luck",
+  "item.totems.totem_of_haste_tier_0": "Totem of Haste I",
+  "item.totems.totem_of_haste_tier_1": "Totem of Haste II",
+  "item.totems.totem_of_strength_tier_0": "Totem of Strength I",
+  "item.totems.totem_of_strength_tier_1": "Totem of Strength II",
+  "item.totems.totem_of_strength_tier_2": "Totem of Strength III",
+  "item.totems.totem_of_regeneration_tier_0": "Totem of Regeneration I",
+  "item.totems.totem_of_regeneration_tier_1": "Totem of Regeneration II",
+  "item.totems.totem_of_regeneration_tier_2": "Totem of Regeneration III",
+  "item.totems.totem_of_regeneration_tier_3": "Totem of Regeneration IV",
+  "item.totems.totem_of_resistance_tier_0": "Totem of Resistance I",
+  "item.totems.totem_of_resistance_tier_1": "Totem of Resistance II",
+  "item.totems.totem_of_resistance_tier_2": "Totem of Resistance II",
+  "item.totems.totem_of_resistance_tier_3": "Totem of Resistance IV",
+  "item.totems.totem_of_resistance_tier_4": "Totem of Resistance V",
+  "item.totems.totem_of_resistance_tier_5": "Totem of Resistance VI",
+  "item.totems.totem_of_night_vision": "Totem of Night Vision",
+  "item.totems.totem_of_water_breathing": "Totem of Water Breathing"
 }

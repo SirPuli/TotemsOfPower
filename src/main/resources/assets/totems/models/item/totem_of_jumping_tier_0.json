@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "totems:item/totem_of_jumping_tier_0"
+    "layer0": "totems:item/totem_of_jumping"
   }
 }

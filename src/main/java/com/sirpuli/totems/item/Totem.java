@@ -8,6 +8,7 @@ import com.sirpuli.totems.util.helper.KeyboardHelper;
 import com.sirpuli.totems.util.helper.FormatHelper.MCFormat;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.IItemTier;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.TieredItem;
 import net.minecraft.util.text.ITextComponent;
@@ -16,7 +17,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class Totem extends TieredItem {
+public class Totem extends Item {
 
     /*Effect IDs        | Colors        | amplifiers
     0: SPEED BOOST      | YELLOW        | 0, 1, 2
@@ -45,9 +46,8 @@ public class Totem extends TieredItem {
             MCFormat.BOLD + MCFormat.DARK_GREEN, MCFormat.BOLD + MCFormat.BLACK,
             MCFormat.BOLD + MCFormat.WHITE, MCFormat.BOLD + MCFormat.DARK_BLUE};
 
-    public Totem(IItemTier statsIn, Properties builder, int id) {
-        super(statsIn, builder);
-        this.stats = statsIn;
+    public Totem(Item.Properties builder, int id) {
+        super(builder);
         this.effectID = id;
     }
 
